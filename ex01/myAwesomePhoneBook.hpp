@@ -6,7 +6,7 @@
 /*   By: moritzknoll <moritzknoll@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/21 11:39:09 by moritzknoll       #+#    #+#             */
-/*   Updated: 2025/10/22 10:42:30 by moritzknoll      ###   ########.fr       */
+/*   Updated: 2025/10/23 10:11:54 by moritzknoll      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -178,5 +178,3 @@ class PhoneBook {
             
         }
 };
-
-
