@@ -3,17 +3,19 @@
 /*                                                        :::      ::::::::   */
 /*   myAwesomePhoneBook.hpp                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: moritzknoll <moritzknoll@student.42.fr>    +#+  +:+       +#+        */
+/*   By: mknoll <mknoll@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/21 11:39:09 by moritzknoll       #+#    #+#             */
-/*   Updated: 2025/10/23 10:11:54 by moritzknoll      ###   ########.fr       */
+/*   Updated: 2025/10/23 11:43:39 by mknoll           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
 #include <string>
 #include <cctype>
+#include <cstdlib>
 #include <iomanip>
+#include <sstream>
 
 // Color definitions for better output readability
 #define RESET   "\033[0m"
@@ -78,10 +80,14 @@ class PhoneBook {
         int contactCount;
     
     public:
+        PhoneBook(): contactCount(0) {}
         void ADD(){
-            // Set ContactCount to oldest if Phonecook is full 
+            // Set ContactCount to oldest if Phonebook is full 
             if (contactCount >= 8)
+            {
+                std::cout << YELLOW << "Phonebook full. Overwriting oldest contact." << RESET << "\n";
                 contactCount = 0;
+            }
             Contact c; 
             std::string input; 
             
@@ -144,7 +150,8 @@ class PhoneBook {
             int index;
             
             try{
-                index = std::stoi(line); 
+                std::stringstream ss(line);
+                ss >> index; 
             }catch(...){
                 std::cout << RED << "Invalid Number. Try a valid number 0-7" << RESET << "\n";
                 return; 

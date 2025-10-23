@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   myAwesomePhonebook.cpp                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: moritzknoll <moritzknoll@student.42.fr>    +#+  +:+       +#+        */
+/*   By: mknoll <mknoll@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/21 10:10:59 by moritzknoll       #+#    #+#             */
-/*   Updated: 2025/10/22 10:40:59 by moritzknoll      ###   ########.fr       */
+/*   Updated: 2025/10/23 11:45:12 by mknoll           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,19 @@ int main() {
         std::getline(std::cin, command);
 
         if (command == "ADD")
-            myphonebook.ADD();
+        {
+            while (true)
+            {
+                std::string command2;
+                myphonebook.ADD();
+                std::cout << CYAN << "Type 'EXIT' to quit adding contacts or press ENTER to add another contact: \n" << RESET;
+                if (std::getline(std::cin, command2))
+                {
+                    if (command2 == "EXIT")
+                        break;
+                }
+            }
+        }
         else if (command == "SEARCH")
             myphonebook.SEARCH();
         else if (command == "EXIT") {
