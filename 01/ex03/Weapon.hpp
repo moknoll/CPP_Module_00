@@ -15,11 +15,10 @@
 
 #include <iostream>
 #include <string>
-#include "HumanB.hpp"
 
 class Weapon {
 	private:
-		std:: string type;
+		std::string type;
 
 	public:
 		Weapon(const std::string &type);

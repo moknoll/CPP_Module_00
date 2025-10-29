@@ -1,12 +1,13 @@
 #Compiler
-CXX = g++ 
-#Compiler Flags
-CXX_FLAGS =  -Wall -Wextra -Werror -std=c++98
+CXX = g++
 
-#Data 
-SRCS = megaphone.cpp 
+#Compiler Flags
+CXX_FLAGS = -Wall -Werror -Wextra -std=c++98
+
+#Sources
+SRCS = main.cpp 
 OBJS = $(SRCS:.cpp=.o)
-NAME = megaphone
+NAME = hiThisIsBrain
 
 #Targets
 all: $(NAME)

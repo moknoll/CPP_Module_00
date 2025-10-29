@@ -1,0 +1,9 @@
+
+# Ignore text files
+*.txt
+
+# Ignore replace files
+*.replace
+
+# Ignore object files
+*.o
