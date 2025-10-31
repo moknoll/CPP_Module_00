@@ -6,7 +6,7 @@
 /*   By: mknoll <mknoll@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/30 12:48:27 by mknoll            #+#    #+#             */
-/*   Updated: 2025/10/30 18:36:59 by mknoll           ###   ########.fr       */
+/*   Updated: 2025/10/31 11:11:58 by mknoll           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,6 +59,12 @@ class Fixed{
 		Fixed &operator--();
 		Fixed operator++(int);
 		Fixed operator--(int);
+
+		// overload min max (Compiler automatically calls function const)
+		static Fixed &min(Fixed &a, Fixed &b);
+		static const Fixed &min(const Fixed &a, const Fixed &b);
+		static Fixed &max(Fixed &a, Fixed &b);
+		static const Fixed &max(const Fixed &a, const Fixed &b);
 };
 
 //overlaod of the insertion paramter

@@ -6,7 +6,7 @@
 /*   By: mknoll <mknoll@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/30 12:48:24 by mknoll            #+#    #+#             */
-/*   Updated: 2025/10/30 18:41:03 by mknoll           ###   ########.fr       */
+/*   Updated: 2025/10/31 10:56:40 by mknoll           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -124,4 +124,32 @@ Fixed Fixed::operator--(int){
 	Fixed temp = *this;
 	value--;
 	return *this;
+}
+
+Fixed &Fixed:: min(Fixed &a, Fixed &b)
+{
+	if (a > b)
+		return b;
+	else 
+		return a;	
+}
+
+Fixed &Fixed:: max(Fixed &a, Fixed &b){
+	if (a > b)
+		return a;
+	else
+		return b;
+}
+
+const Fixed &Fixed::min(const Fixed &a, const Fixed &b){
+	if (a > b) 
+		return b; 
+	else 
+		return a;
+}
+const Fixed &Fixed::max(const Fixed &a, const Fixed &b){
+	if (a > b) 
+		return a; 
+	else 
+		return b;
 }

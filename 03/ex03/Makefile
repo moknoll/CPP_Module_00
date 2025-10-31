@@ -5,9 +5,9 @@ CXX = c++
 CXX_FLAGS = -Wall -Werror -Wextra -std=c++98
 
 #Sources
-SRCS = main.cpp Fixed.cpp
+SRCS = main.cpp ClapTrap.cpp
 OBJS = $(SRCS:.cpp=.o)
-NAME = fixed3
+NAME = ClapTrap
 
 #Targets
 all: $(NAME)
