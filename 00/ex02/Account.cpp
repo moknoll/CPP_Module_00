@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Account.cpp                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mknoll <mknoll@student.42.fr>              +#+  +:+       +#+        */
+/*   By: moritzknoll <moritzknoll@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/23 13:32:41 by mknoll            #+#    #+#             */
-/*   Updated: 2025/10/28 11:59:23 by mknoll           ###   ########.fr       */
+/*   Updated: 2025/10/31 09:02:00 by moritzknoll      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -103,6 +103,7 @@ void Account::displayStatus( void )const{
               << std::endl;
 }
 
+// gets currrent time and converts to local time 
 void Account::_displayTimestamp(void)
 {
 	std::time_t t = std::time(NULL);

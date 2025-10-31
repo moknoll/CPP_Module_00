@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   myAwesomePhonebook.cpp                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mknoll <mknoll@student.42.fr>              +#+  +:+       +#+        */
+/*   By: moritzknoll <moritzknoll@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/21 10:10:59 by moritzknoll       #+#    #+#             */
-/*   Updated: 2025/10/28 09:45:03 by mknoll           ###   ########.fr       */
+/*   Updated: 2025/10/31 09:16:03 by moritzknoll      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ std::string Contact::getNickName() { return nick_name; }
 std::string Contact::getDarkestSecret() { return darkest_secret; }
 std::string Contact::getPhoneNumber() { return phone_number; }
 
-// PhoneBook method definitions
+// Default constructor
 PhoneBook::PhoneBook(): contactCount(0) {}
 
 void PhoneBook::ADD(){
@@ -76,7 +76,7 @@ void PhoneBook::SEARCH(){
     
     std::cout << BOLD << BLUE << "\n=== Contact List ===" << RESET << "\n";
     
-    // set width for correct display 
+    // set width for correct display and adds spaces if needed 
     std::cout << BOLD << std::setw(10) << "Index" << "|"
               << std::setw(10) << "First Name" << "|"
               << std::setw(10) << "Last Name" << "|"
@@ -90,19 +90,18 @@ void PhoneBook::SEARCH(){
                    << std::setw(10) << truncate(contacts[i].getNickName()) << "\n";
     }
     
-    // throwing error if Invalid number
+    
+    // error if Invalid number
+    int index;
+    
     std::string line;
     std::cout << CYAN << "\nType in index of contact: " << RESET;
     std::getline(std::cin, line);
+    std::stringstream ss(line);
     
-    int index;
-    
-    try{
-        std::stringstream ss(line);
-        ss >> index; 
-    }catch(...){
-        std::cout << RED << "Invalid Number. Try a valid number 0-7" << RESET << "\n";
-        return; 
+    if (!(ss >> index)) {
+        std::cout << RED << "Invalid input. Please enter a valid number." << RESET << "\n";
+        return;
     }
     
     if (index < 0 || index >= contactCount)
@@ -168,6 +167,6 @@ int main() {
         } else
             std::cout << RED << "Whoops! Please use ADD, SEARCH, or EXIT." << RESET << "\n\n";
     }
-
+    
     return 0;
 }
