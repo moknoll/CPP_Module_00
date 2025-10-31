@@ -7,7 +7,7 @@ CXX_FLAGS = -Wall -Werror -Wextra -std=c++98
 #Sources
 SRCS = main.cpp Harl.cpp
 OBJS = $(SRCS:.cpp=.o)
-NAME = Harl
+NAME = harlfilter
 
 #Targets
 all: $(NAME)

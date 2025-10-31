@@ -6,14 +6,14 @@
 /*   By: mknoll <mknoll@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/21 10:10:59 by moritzknoll       #+#    #+#             */
-/*   Updated: 2025/10/28 09:45:03 by mknoll           ###   ########.fr       */
+/*   Updated: 2025/10/30 16:35:47 by mknoll           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "myAwesomePhoneBook.hpp"
 
 // Contact method definitions 
-void Contact::setFirstName(const std::string &firstName) { first_name = firstName; }
+void Contact::setFirstName(const std::string &firstName){first_name = firstName; }
 void Contact::setLastName(const std::string &lastName) { last_name = lastName; }
 void Contact::setNickName(const std::string &nickName) { nick_name = nickName; }
 void Contact::setDarkestSecret(const std::string &darkestSecret) { darkest_secret = darkestSecret; }
@@ -38,7 +38,7 @@ void PhoneBook::ADD(){
     Contact c; 
     std::string input; 
     
-    std::cout << BOLD << BLUE << "\n=== Adding New Contact ===" << RESET << "\n";
+    std::cout << BOLD << BLUE << "\nAdding New Contact " << RESET << "\n";
     
     //set Values
     std::cout << CYAN << "First Name: " << RESET;
@@ -74,7 +74,7 @@ void PhoneBook::SEARCH(){
         return;
     }
     
-    std::cout << BOLD << BLUE << "\n=== Contact List ===" << RESET << "\n";
+    std::cout << BOLD << BLUE << "\nContact List" << RESET << "\n";
     
     // set width for correct display 
     std::cout << BOLD << std::setw(10) << "Index" << "|"
