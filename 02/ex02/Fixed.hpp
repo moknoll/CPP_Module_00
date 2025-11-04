@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Fixed.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mknoll <mknoll@student.42.fr>              +#+  +:+       +#+        */
+/*   By: moritzknoll <moritzknoll@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/30 12:48:27 by mknoll            #+#    #+#             */
-/*   Updated: 2025/10/31 11:11:58 by mknoll           ###   ########.fr       */
+/*   Updated: 2025/11/04 09:28:44 by moritzknoll      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ class Fixed{
 		~Fixed();	
 
 		// getter
-		int getRawBits ( void );
+		int getRawBits ( void ) const ;
 		// setter
 		void setRawBits ( int const raw);
 
