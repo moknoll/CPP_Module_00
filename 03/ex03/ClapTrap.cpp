@@ -6,18 +6,18 @@
 /*   By: mknoll <mknoll@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/31 12:07:26 by mknoll            #+#    #+#             */
-/*   Updated: 2025/10/31 13:35:29 by mknoll           ###   ########.fr       */
+/*   Updated: 2025/10/31 14:34:24 by mknoll           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ClapTrap.hpp"
 
 ClapTrap::ClapTrap(): hitPoints(10), energyPoints(10), attackDamage(0) {
-	std::cout << "Default Constructor called"<< std::endl;
+	std::cout << "Default Constructor ClapTrap called"<< std::endl;
 }
 
 ClapTrap::~ClapTrap(){
-	std::cout << "Destructor called" << std::endl;
+	std::cout << "ClapTrap Destructor called" << std::endl;
 }
 
 ClapTrap::ClapTrap( std::string name ): hitPoints(10), energyPoints(10), attackDamage(0) {

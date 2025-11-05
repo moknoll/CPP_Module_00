@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ClapTrapp.hpp                                      :+:      :+:    :+:   */
+/*   ClapTrap.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mknoll <mknoll@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/31 12:02:26 by mknoll            #+#    #+#             */
-/*   Updated: 2025/10/31 13:26:47 by mknoll           ###   ########.fr       */
+/*   Updated: 2025/10/31 15:05:43 by mknoll           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@
 #include <string> 
 
 class ClapTrap{
-	private:
+	protected:  // Änderung von private zu protected
 		std::string name;
 		int hitPoints;
 		int energyPoints;
