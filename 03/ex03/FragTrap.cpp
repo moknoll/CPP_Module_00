@@ -3,23 +3,23 @@
 /*                                                        :::      ::::::::   */
 /*   FragTrap.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mknoll <mknoll@student.42.fr>              +#+  +:+       +#+        */
+/*   By: moritzknoll <moritzknoll@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/31 16:33:27 by mknoll            #+#    #+#             */
-/*   Updated: 2025/10/31 18:54:34 by mknoll           ###   ########.fr       */
+/*   Updated: 2025/11/07 11:55:58 by moritzknoll      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "FragTrap.hpp"
 
-FragTrap::FragTrap() : ScavTrap(){
+FragTrap::FragTrap() : ClapTrap(){
 	this->hitPoints = 100;
 	this->energyPoints = 100;
 	this->attackDamage = 30;
 	std::cout<< "FragTrap default constructor called" << std::endl; 
 }
 
-FragTrap::FragTrap( std:: string name ) : ScavTrap(name){
+FragTrap::FragTrap( std:: string name ) : ClapTrap(name){
 	this->hitPoints = 100;
 	this->energyPoints = 100;
 	this->attackDamage = 30;

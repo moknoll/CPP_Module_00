@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   FragTrap.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mknoll <mknoll@student.42.fr>              +#+  +:+       +#+        */
+/*   By: moritzknoll <moritzknoll@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/31 16:33:30 by mknoll            #+#    #+#             */
-/*   Updated: 2025/10/31 18:46:49 by mknoll           ###   ########.fr       */
+/*   Updated: 2025/11/07 11:56:03 by moritzknoll      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 
 #include "ScavTrap.hpp"
 
-class FragTrap: public ScavTrap{
+class FragTrap: virtual public ClapTrap{
 	public:
 		FragTrap();
 		~FragTrap();

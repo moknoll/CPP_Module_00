@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mknoll <mknoll@student.42.fr>              +#+  +:+       +#+        */
+/*   By: moritzknoll <moritzknoll@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/31 13:19:25 by mknoll            #+#    #+#             */
-/*   Updated: 2025/10/31 13:31:26 by mknoll           ###   ########.fr       */
+/*   Updated: 2025/11/07 13:45:30 by moritzknoll      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "FragTrap.hpp"
+#include "DiamondTrap.hpp"
 
 int main(){
 	
@@ -37,6 +37,14 @@ int main(){
 	Alice.beRepaired(25);
 	Alice.takeDamage(30);
 	Alice.highFivesGuys();
+
+	std::cout << "\n=== Testing DiamondTrap ===" << std::endl; 
+	DiamondTrap Tim("Tim"); 
+	
+	Tim.whoAmI();
+	Tim.attack("Enemy");
+	Tim.guardGate();
+	Tim.highFivesGuys();
 	
 	std::cout << "\n=== End of Tests ===" << std::endl;
 	
