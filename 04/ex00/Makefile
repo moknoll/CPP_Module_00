@@ -1,29 +1,29 @@
-#Compiler 
+#Compiler
 CXX = c++
 
-#Compiler Flags 
+#Compiler Flags
 CXX_FLAGS = -Wall -Werror -Wextra -std=c++98
 
 #Sources
-SRCS = main.cpp polymorphism.cpp
-ObJS = $(SRCS:.cpp=.o)
+SRCS = main.cpp Dog.cpp Animal.cpp Cat.cpp WrongCat.cpp WrongAnimal.cpp
+OBJS = $(SRCS:.cpp=.o)
 NAME = polymorphism
 
-#Targets 
+#Targets
 all: $(NAME)
 
-#Linking 
-$(NAME): $(OBJS)
+#Linking
+$(NAME): $(OBJS) 
 	$(CXX) $(CXX_FLAGS) $(OBJS) -o $(NAME)
 
-#Compiling 
+#Compiling
 %.o: %.cpp
 	$(CXX) $(CXX_FLAGS) -c $< -o $@
 
 clean: 
 	rm -f $(OBJS)
 
-fclean:
-	rm -rf $(NAME) $(OBJS)
+fclean: 
+	rm -f $(NAME) $(OBJS)
 
 re: clean all
