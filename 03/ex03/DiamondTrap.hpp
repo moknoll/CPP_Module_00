@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   DiamondTrap.hpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: moritzknoll <moritzknoll@student.42.fr>    +#+  +:+       +#+        */
+/*   By: mknoll <mknoll@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/05 14:33:16 by mknoll            #+#    #+#             */
-/*   Updated: 2025/11/07 09:15:00 by moritzknoll      ###   ########.fr       */
+/*   Updated: 2025/11/12 11:47:29 by mknoll           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 
 #include "FragTrap.hpp"
 
-class DiamondTrap: public ScavTrap, public FragTrap{
+class DiamondTrap: virtual public ScavTrap, virtual public FragTrap{
 	private: 
 		std::string name;
 		
@@ -23,6 +23,8 @@ class DiamondTrap: public ScavTrap, public FragTrap{
 		DiamondTrap();
 		~DiamondTrap(); 
 		DiamondTrap(std:: string name);
+		DiamondTrap(const DiamondTrap &obj);
+		DiamondTrap &operator=(const DiamondTrap &obj);
 
 		void whoAmI();
 };

@@ -1,17 +1,17 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ClapTrapp.hpp                                      :+:      :+:    :+:   */
+/*   ClapTrap.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mknoll <mknoll@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/31 12:02:26 by mknoll            #+#    #+#             */
-/*   Updated: 2025/10/31 13:26:47 by mknoll           ###   ########.fr       */
+/*   Updated: 2025/11/12 12:53:57 by mknoll           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef CLAP_TRAPP_HPP
-#define CLAP_TRAPP_HPP
+#ifndef CLAP_TRAP_HPP
+#define CLAP_TRAP_HPP
 
 #include <iostream>
 #include <string> 
@@ -24,11 +24,12 @@ class ClapTrap{
 		int attackDamage;
 	
 	public:
-		// constructor 1 constructor missing 
-		ClapTrap( void );
+		ClapTrap( );
 		~ClapTrap();
 		ClapTrap( std:: string name );
-
+		ClapTrap( const ClapTrap &obj );
+		ClapTrap &operator=(const ClapTrap &obj );
+		
 		void attack( const std::string& target);
 		void takeDamage( unsigned int amount);
 		void beRepaired(unsigned int amount);

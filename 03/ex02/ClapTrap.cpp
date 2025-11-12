@@ -6,14 +6,14 @@
 /*   By: mknoll <mknoll@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/31 12:07:26 by mknoll            #+#    #+#             */
-/*   Updated: 2025/10/31 14:34:24 by mknoll           ###   ########.fr       */
+/*   Updated: 2025/11/12 11:27:48 by mknoll           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ClapTrap.hpp"
 
 ClapTrap::ClapTrap(): hitPoints(10), energyPoints(10), attackDamage(0) {
-	std::cout << "Default Constructor ClapTrap called"<< std::endl;
+	std::cout << "ClapTrap Default Constructor called"<< std::endl;
 }
 
 ClapTrap::~ClapTrap(){
@@ -22,9 +22,24 @@ ClapTrap::~ClapTrap(){
 
 ClapTrap::ClapTrap( std::string name ): hitPoints(10), energyPoints(10), attackDamage(0) {
 	this->name = name;
-	std::cout << name << " Constructor called "
+	std::cout << name << " ClapTrap Constructor called "
 			  << "Hit Points: " << this->hitPoints
 			  << " Energy Points: " << this->energyPoints << std::endl;
+}
+
+ClapTrap::ClapTrap( const ClapTrap &obj)
+{
+	std:: cout << "ClapTrap Copy constructor called" << std::endl;
+	this->name = obj.name;
+	return ;
+}
+
+ClapTrap &ClapTrap::operator=( const ClapTrap &obj)
+{
+	std:: cout << "ClapTrap Copy assignement Operator called" << std::endl;
+	if (this != &obj)
+		name = obj.name;
+	return *this;
 }
 
 void ClapTrap::attack( const std::string &target)

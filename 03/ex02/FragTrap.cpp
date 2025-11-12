@@ -6,7 +6,7 @@
 /*   By: mknoll <mknoll@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/31 16:33:27 by mknoll            #+#    #+#             */
-/*   Updated: 2025/10/31 18:54:34 by mknoll           ###   ########.fr       */
+/*   Updated: 2025/11/12 11:47:52 by mknoll           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,28 @@ FragTrap::FragTrap( std:: string name ) : ScavTrap(name){
 
 FragTrap::~FragTrap(){
 	std::cout << "FragTrap Destructor called" <<std::endl;
+}
+
+FragTrap::FragTrap( const FragTrap &obj) : ScavTrap(obj)
+{
+	std:: cout << "FragTrap Copy constructor called" << std::endl;
+	this->hitPoints = 100;
+	this->energyPoints = 100;
+	this->attackDamage = 30;
+	return ;
+}
+
+FragTrap &FragTrap::operator=( const FragTrap &obj)
+{
+	std:: cout << "FragTrap Copy assignement Operator called" << std::endl;
+	if (this != &obj)
+	{
+		ScavTrap::operator=(obj);
+		this->hitPoints = 100;
+		this->energyPoints = 100;
+		this->attackDamage = 30;
+	}
+	return *this;
 }
 
 void FragTrap::highFivesGuys(void) {

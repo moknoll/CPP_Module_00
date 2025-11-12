@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   DiamondTrap.cpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: moritzknoll <moritzknoll@student.42.fr>    +#+  +:+       +#+        */
+/*   By: mknoll <mknoll@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/07 09:15:03 by moritzknoll       #+#    #+#             */
-/*   Updated: 2025/11/07 13:59:56 by moritzknoll      ###   ########.fr       */
+/*   Updated: 2025/11/12 11:49:18 by mknoll           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,6 +49,31 @@ DiamondTrap::DiamondTrap(std::string name) : ClapTrap(name + "_clap_name")
 	std::cout << "Attack Damage: " << this->attackDamage << std::endl;
     return ; 
 }
+
+DiamondTrap::DiamondTrap( const DiamondTrap &obj) : ClapTrap(obj.name + "_clap_name")
+{
+	std:: cout << "DiamondTrap Copy constructor called" << std::endl;
+	this->name = obj.name;
+	this->hitPoints = 100;
+	this->energyPoints = 50;
+	this->attackDamage = 30;
+	return ;
+}
+
+DiamondTrap &DiamondTrap::operator=( const DiamondTrap &obj)
+{
+	std:: cout << "DiamondTrap Copy assignement Operator called" << std::endl;
+	if (this != &obj)
+	{
+		ClapTrap::operator=(obj);
+		this->name = obj.name;
+		this->hitPoints = 100;
+		this->energyPoints = 50;
+		this->attackDamage = 30;
+	}
+	return *this;
+}
+
 
 void DiamondTrap::whoAmI()
 {

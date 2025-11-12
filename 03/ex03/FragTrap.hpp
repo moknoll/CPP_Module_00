@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   FragTrap.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: moritzknoll <moritzknoll@student.42.fr>    +#+  +:+       +#+        */
+/*   By: mknoll <mknoll@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/31 16:33:30 by mknoll            #+#    #+#             */
-/*   Updated: 2025/11/07 11:56:03 by moritzknoll      ###   ########.fr       */
+/*   Updated: 2025/11/12 11:50:23 by mknoll           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,11 +15,13 @@
 
 #include "ScavTrap.hpp"
 
-class FragTrap: virtual public ClapTrap{
+class FragTrap: virtual public ScavTrap{
 	public:
 		FragTrap();
 		~FragTrap();
 		FragTrap( std::string name );
+		FragTrap ( const FragTrap &obj);
+		FragTrap &operator=(const FragTrap &obj);
 
 		void highFivesGuys(void);
 		

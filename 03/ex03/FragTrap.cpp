@@ -3,23 +3,23 @@
 /*                                                        :::      ::::::::   */
 /*   FragTrap.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: moritzknoll <moritzknoll@student.42.fr>    +#+  +:+       +#+        */
+/*   By: mknoll <mknoll@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/31 16:33:27 by mknoll            #+#    #+#             */
-/*   Updated: 2025/11/07 11:55:58 by moritzknoll      ###   ########.fr       */
+/*   Updated: 2025/11/12 11:45:39 by mknoll           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "FragTrap.hpp"
 
-FragTrap::FragTrap() : ClapTrap(){
+FragTrap::FragTrap() : ScavTrap(){
 	this->hitPoints = 100;
 	this->energyPoints = 100;
 	this->attackDamage = 30;
 	std::cout<< "FragTrap default constructor called" << std::endl; 
 }
 
-FragTrap::FragTrap( std:: string name ) : ClapTrap(name){
+FragTrap::FragTrap( std:: string name ) : ScavTrap(name){
 	this->hitPoints = 100;
 	this->energyPoints = 100;
 	this->attackDamage = 30;
@@ -31,6 +31,28 @@ FragTrap::FragTrap( std:: string name ) : ClapTrap(name){
 
 FragTrap::~FragTrap(){
 	std::cout << "FragTrap Destructor called" <<std::endl;
+}
+
+FragTrap::FragTrap( const FragTrap &obj) : ScavTrap(obj)
+{
+	std:: cout << "FragTrap Copy constructor called" << std::endl;
+	this->hitPoints = 100;
+	this->energyPoints = 100;
+	this->attackDamage = 30;
+	return ;
+}
+
+FragTrap &FragTrap::operator=( const FragTrap &obj)
+{
+	std:: cout << "FragTrap Copy assignement Operator called" << std::endl;
+	if (this != &obj)
+	{
+		ScavTrap::operator=(obj);
+		this->hitPoints = 100;
+		this->energyPoints = 100;
+		this->attackDamage = 30;
+	}
+	return *this;
 }
 
 void FragTrap::highFivesGuys(void) {

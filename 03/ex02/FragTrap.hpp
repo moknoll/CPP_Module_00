@@ -6,7 +6,7 @@
 /*   By: mknoll <mknoll@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/31 16:33:30 by mknoll            #+#    #+#             */
-/*   Updated: 2025/10/31 18:46:49 by mknoll           ###   ########.fr       */
+/*   Updated: 2025/11/12 11:42:37 by mknoll           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,8 @@ class FragTrap: public ScavTrap{
 		FragTrap();
 		~FragTrap();
 		FragTrap( std::string name );
+		FragTrap ( const FragTrap &obj);
+		FragTrap &operator=(const FragTrap &obj);
 
 		void highFivesGuys(void);
 		

@@ -6,7 +6,7 @@
 /*   By: mknoll <mknoll@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/31 14:23:35 by mknoll            #+#    #+#             */
-/*   Updated: 2025/10/31 15:12:37 by mknoll           ###   ########.fr       */
+/*   Updated: 2025/11/12 11:36:38 by mknoll           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,9 +20,10 @@ class ScavTrap: public ClapTrap{
 		ScavTrap();
 		~ScavTrap();
 		ScavTrap( std::string name );
-
+		ScavTrap( const ScavTrap &obj);
+		ScavTrap &operator=( const ScavTrap &obj);
+		
 		void guardGate();
 };
-
 
 #endif
