@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ScavTrap.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: moritzknoll <moritzknoll@student.42.fr>    +#+  +:+       +#+        */
+/*   By: mknoll <mknoll@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/31 14:29:43 by mknoll            #+#    #+#             */
-/*   Updated: 2025/11/07 13:40:00 by moritzknoll      ###   ########.fr       */
+/*   Updated: 2025/11/17 11:52:12 by mknoll           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,6 +53,21 @@ ScavTrap &ScavTrap::operator=( const ScavTrap &obj)
 		this->attackDamage = 20;
 	}
 	return *this;
+}
+
+void ScavTrap::attack(const std::string& target)
+{
+	if (this->hitPoints > 0 && this->energyPoints > 0)
+	{
+		std::cout  
+				  << "ScavTrap " << this->name << " attacks " 
+				  << target << ", causing " 
+				  << this->attackDamage 
+			  	<< " points of damage!" << std::endl;
+		this->energyPoints -= 1;
+	}
+	else 
+		std::cout << "ScavTrap " << this->name << " can't attack, not enough hit points or energy!" << std::endl;
 }
 
 void ScavTrap::guardGate(){

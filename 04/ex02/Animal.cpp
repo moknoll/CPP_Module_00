@@ -6,7 +6,7 @@
 /*   By: mknoll <mknoll@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/11 12:18:52 by moritzknoll       #+#    #+#             */
-/*   Updated: 2025/11/17 12:31:12 by mknoll           ###   ########.fr       */
+/*   Updated: 2025/11/17 14:34:23 by mknoll           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,10 +43,4 @@ Animal &Animal::operator=( const Animal &obj)
 std::string Animal::getType() const
 {
     return type;
-}
-
-void Animal::makeSound() const
-{
-    std:: cout << "Some other Animal noise..." << std::endl; 
-    return ;
 }

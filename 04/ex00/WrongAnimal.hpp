@@ -6,7 +6,7 @@
 /*   By: mknoll <mknoll@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/12 14:46:13 by mknoll            #+#    #+#             */
-/*   Updated: 2025/11/12 14:55:57 by mknoll           ###   ########.fr       */
+/*   Updated: 2025/11/17 13:22:15 by mknoll           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,11 +21,7 @@ class WrongAnimal{
     
     public:
         WrongAnimal(); 
-        ~WrongAnimal(); //not virtual 
-        // Animal();
-        // Animal( const Animal &obj);
-        // Animal &operator=( const Animal &obj);
-        
+        ~WrongAnimal(); //not virtual    
         std::string getType() const ;
         void makeSound() const; // not virtual 
 }; 

@@ -6,7 +6,7 @@
 /*   By: mknoll <mknoll@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/11 12:18:59 by moritzknoll       #+#    #+#             */
-/*   Updated: 2025/11/12 14:59:45 by mknoll           ###   ########.fr       */
+/*   Updated: 2025/11/17 13:24:29 by mknoll           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,11 +27,21 @@ int main()
 	j->makeSound();
 	meta->makeSound();
 
+	std::cout << "=== Constructor Tests ===" << std::endl;
+	
+	Dog originalDog;
+	Dog copiedDog(originalDog);
+	std::cout << "Copied Dog Type: " << copiedDog.getType() << std::endl;
+	
+	Dog assignedDog;
+	assignedDog = originalDog;
+	std::cout << "Assigned Dog Type: " << assignedDog.getType() << std::endl;
+
+	
 	delete meta;
 	delete i;
 	delete j;
 	
-
 	std::cout << "=== Wrong Tests ===" << std::endl;
 	const WrongAnimal* meta2 = new WrongAnimal();
 	const WrongAnimal* i2 = new WrongCat();

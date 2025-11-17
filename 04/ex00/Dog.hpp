@@ -6,7 +6,7 @@
 /*   By: mknoll <mknoll@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/12 13:55:25 by mknoll            #+#    #+#             */
-/*   Updated: 2025/11/12 14:34:04 by mknoll           ###   ########.fr       */
+/*   Updated: 2025/11/17 12:28:08 by mknoll           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,9 +19,8 @@ class Dog: public Animal{
     public: 
         Dog(); 
         ~Dog(); 
-        // Dog(std::string name);
-        // Dog( const Dog &obj);
-        // Dog &operator=( const Dog &obj);
+        Dog( const Dog &obj);
+        Dog &operator=( const Dog &obj);
 		void makeSound() const;
 };
 

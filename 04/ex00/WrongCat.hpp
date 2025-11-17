@@ -6,7 +6,7 @@
 /*   By: mknoll <mknoll@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/12 14:46:20 by mknoll            #+#    #+#             */
-/*   Updated: 2025/11/12 14:56:32 by mknoll           ###   ########.fr       */
+/*   Updated: 2025/11/17 13:22:08 by mknoll           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,9 +19,6 @@ class WrongCat: public WrongAnimal{
     public: 
         WrongCat(); 
         ~WrongCat(); 
-        // Cat(std::string name);
-        // Cat( const Cat &obj);
-        // Cat &operator=( const Cat &obj);
 		void makeSound() const ; // This does not override 
 
 };

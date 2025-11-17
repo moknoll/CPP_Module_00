@@ -1,33 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   WrongCat.cpp                                       :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mknoll <mknoll@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/11/12 14:46:15 by mknoll            #+#    #+#             */
-/*   Updated: 2025/11/17 13:22:34 by mknoll           ###   ########.fr       */
+/*   Created: 2025/11/11 12:18:59 by moritzknoll       #+#    #+#             */
+/*   Updated: 2025/11/17 14:44:01 by mknoll           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "Dog.hpp"
+#include "Cat.hpp"
 
-#include "WrongCat.hpp"
-
-WrongCat:: WrongCat() : WrongAnimal()
+int main()
 {
-	std:: cout << "Default Constructor called for Wrongcat" << std::endl;
-	type = "Cat";
-	return ;	
-}
-
-WrongCat:: ~WrongCat()
-{
-	std:: cout << "Destructor called for Wrongcat" << std::endl;
-	return ;
-}
-
-void WrongCat::makeSound() const 
-{
-	std::cout << "Wrong Woof Woof" << std::endl;
-	return ;	
+    const Animal* dog = new Dog();
+    const Animal* cat = new Cat();
+    
+    dog->makeSound();
+    cat->makeSound();
+    
+    // Animal directAnimal;  // ERROR: cannot instantiate abstract class
+    // Animal* directPtr = new Animal();  // ERROR: cannot instantiate abstract class
+    
+    delete dog;
+    delete cat;
+    
+    return 0;
 }
