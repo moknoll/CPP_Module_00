@@ -6,7 +6,7 @@
 /*   By: moritzknoll <moritzknoll@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/30 12:48:27 by mknoll            #+#    #+#             */
-/*   Updated: 2025/11/04 09:37:37 by moritzknoll      ###   ########.fr       */
+/*   Updated: 2025/11/11 20:19:53 by moritzknoll      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,6 @@ class Fixed{
 	private: 
 		int value;
 		static const int fractBits = 8;
-
 	public:
 		// Default Constructor
 		Fixed();

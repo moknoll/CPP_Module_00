@@ -6,7 +6,7 @@
 /*   By: moritzknoll <moritzknoll@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/11 12:18:57 by moritzknoll       #+#    #+#             */
-/*   Updated: 2025/11/11 12:33:32 by moritzknoll      ###   ########.fr       */
+/*   Updated: 2025/11/11 20:22:09 by moritzknoll      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,8 +24,8 @@ class Animal{
         ~Animal(); 
         void Animal();
 
-        std::string getType(); 
-        void        setType(); 
+        std::string getType() const; 
+        void        setType(std:: string name); 
 }; 
 
 class Dog: public Animal{
@@ -34,7 +34,7 @@ class Dog: public Animal{
     public: 
         Dog(); 
         ~Dog(); 
-        void Dog(std::string name); 
+        Dog(std::string name); 
 
         void makeSound();
 }; 
@@ -45,7 +45,7 @@ class Cat: public Animal{
     public: 
         Cat(); 
         ~Cat(); 
-        void Cat(std::string name); 
+        Cat(std::string name); 
 
         void makeSound();
 };
