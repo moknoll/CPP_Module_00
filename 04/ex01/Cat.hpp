@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Cat.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: moritzknoll <moritzknoll@student.42.fr>    +#+  +:+       +#+        */
+/*   By: mknoll <mknoll@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/12 13:55:38 by mknoll            #+#    #+#             */
-/*   Updated: 2025/11/18 10:55:24 by moritzknoll      ###   ########.fr       */
+/*   Updated: 2025/11/18 12:24:05 by mknoll           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,7 @@ class Cat: public Animal{
         Cat &operator=( const Cat &obj);
         
 		void makeSound() const ;
+        Brain* getBrain() const;
 
 };
 

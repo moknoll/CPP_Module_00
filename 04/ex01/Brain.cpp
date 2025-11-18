@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Brain.cpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: moritzknoll <moritzknoll@student.42.fr>    +#+  +:+       +#+        */
+/*   By: mknoll <mknoll@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/17 13:48:20 by mknoll            #+#    #+#             */
-/*   Updated: 2025/11/18 10:45:05 by moritzknoll      ###   ########.fr       */
+/*   Updated: 2025/11/18 12:36:48 by mknoll           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ Brain::~Brain()
 
 Brain::Brain( const Brain&obj)
 {
-	std:: cout << "Copy constructor called for Brain" << std::endl;
+	// std:: cout << "Copy constructor called for Brain" << std::endl;
 	for (int i = 0; i < 100; i++)
 	{
 		this->ideas[i] = obj.ideas[i];
@@ -36,7 +36,7 @@ Brain::Brain( const Brain&obj)
 
 Brain &Brain:: operator=(const Brain &obj)
 {
-	std::cout << "Brain copy assignment constructor called" << std::endl;
+	// std::cout << "Brain copy assignment constructor called" << std::endl;
 	if(this != &obj)
 	{
 		for (int i = 0; i < 100; i++)

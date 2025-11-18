@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Cat.cpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: moritzknoll <moritzknoll@student.42.fr>    +#+  +:+       +#+        */
+/*   By: mknoll <mknoll@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/12 14:12:44 by mknoll            #+#    #+#             */
-/*   Updated: 2025/11/18 12:15:27 by moritzknoll      ###   ########.fr       */
+/*   Updated: 2025/11/18 12:29:46 by mknoll           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ Cat:: ~Cat()
 	return ;
 }
 
-
+// allocates new brain at adress .. copies the attributes of Original
 Cat::Cat( const Cat &obj): Animal(obj)
 {
 	// std::cout << "Cat copy constructor called" << std::endl;
@@ -35,12 +35,14 @@ Cat::Cat( const Cat &obj): Animal(obj)
 	return ;
 }
 
+// deletes old brain, allocates new brain, assigns attributes
 Cat &Cat:: operator=( const Cat &obj)
 {
 	// std:: cout<< "Cat assignement constructor called" << std::endl;
 	if(this != &obj)
 	{
-		// Copies all attributes of class Animal
+		// Call parent class assignment operator to properly copy inherited attributes
+		// This ensures 'type' and other Animal members are correctly assigned
 		Animal::operator=(obj);
 		delete brain;
 		brain = new Brain(*obj.brain);
@@ -52,5 +54,10 @@ void Cat::makeSound() const
 {
 	std::cout << "Miau Miau" << std::endl;
 	return ;	
+}
+
+Brain* Cat::getBrain() const
+{
+	return brain;
 }
 

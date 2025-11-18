@@ -1,33 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   AAnimal.hpp                                        :+:      :+:    :+:   */
+/*   AMateria.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mknoll <mknoll@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/11/11 12:18:57 by moritzknoll       #+#    #+#             */
-/*   Updated: 2025/11/18 12:52:21 by mknoll           ###   ########.fr       */
+/*   Created: 2025/11/18 12:57:47 by mknoll            #+#    #+#             */
+/*   Updated: 2025/11/18 13:35:13 by mknoll           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef AANIMAL_HPP
-#define AANIMAL_HPP
-#include <iostream>
-#include <string>
+#ifndef AMATERIA_HPP
+#define AMATERIA_HPP
 
-class AAnimal{
-    protected: 
-        std::string type; 
-    
-    public:
-        AAnimal(); 
-        virtual ~AAnimal(); 
-        AAnimal( const AAnimal &obj);
-        AAnimal &operator=( const AAnimal &obj);
-        
-        std::string getType() const ;
-        //pure virtual function
-        virtual void makeSound() const = 0; 
-}; 
+#include <iostream>
+#include <string> 
+
+class ICharacter;
+
+class AMateria
+{
+	protected:
+	std::string type;
+
+	public:
+		AMateria();
+		AMateria(std::string const & type);
+		AMateria(const AMateria &obj);
+		AMateria &operator=(const AMateria &obj);
+		virtual ~AMateria();
+
+		std::string const & getType() const;
+		virtual AMateria* clone() const = 0;
+		virtual void use(ICharacter& target);
+};
 
 #endif

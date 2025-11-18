@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Dog.cpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: moritzknoll <moritzknoll@student.42.fr>    +#+  +:+       +#+        */
+/*   By: mknoll <mknoll@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/12 13:57:20 by mknoll            #+#    #+#             */
-/*   Updated: 2025/11/18 12:11:58 by moritzknoll      ###   ########.fr       */
+/*   Updated: 2025/11/18 12:30:12 by mknoll           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,7 @@ Dog:: ~Dog()
 	return ;
 }
 
+// allocates new brain at adress .. copies the attributes of Original
 Dog::Dog(const Dog &obj) : Animal(obj)
 {
 	// std:: cout << "Dog copy constructor called" << std::endl;
@@ -34,11 +35,14 @@ Dog::Dog(const Dog &obj) : Animal(obj)
 	return ;
 }
 
+// deletes old brain, allocates new brain, assigns attributes
 Dog &Dog::operator=(const Dog &obj) 
 {
 	// std::cout << "Dog assigment constructor called" << std::endl;
 	if (this != &obj)
 	{
+		// Call parent class assignment operator to properly copy inherited attributes
+		// This ensures 'type' and other Animal members are correctly assigned
 		Animal::operator=(obj);
 		delete brain;
 		brain = new Brain(*obj.brain);
@@ -51,5 +55,10 @@ void Dog::makeSound() const
 {
 	std::cout << "Woof Woof" << std::endl;
 	return ;	
+}
+
+Brain* Dog::getBrain() const
+{
+	return brain;
 }
 

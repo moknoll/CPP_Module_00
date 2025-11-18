@@ -3,36 +3,36 @@
 /*                                                        :::      ::::::::   */
 /*   AAnimal.cpp                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: moritzknoll <moritzknoll@student.42.fr>    +#+  +:+       +#+        */
+/*   By: mknoll <mknoll@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/11 12:18:52 by moritzknoll       #+#    #+#             */
-/*   Updated: 2025/11/18 11:12:48 by moritzknoll      ###   ########.fr       */
+/*   Updated: 2025/11/18 12:52:21 by mknoll           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Animal.hpp"
+#include "AAnimal.hpp"
 
-Animal:: Animal() : type("Animal"){
-    std::cout << "Default Constructor called for Animal" << std::endl;
+AAnimal:: AAnimal() : type("AAnimal"){
+    std::cout << "Default Constructor called for AAnimal" << std::endl;
     return ; 
 }
 
-Animal:: ~Animal()
+AAnimal:: ~AAnimal()
 {
-    std::cout << "Destructor for Animal called" << std::endl; 
+    std::cout << "Destructor for AAnimal called" << std::endl; 
     return ;
 }
 
-Animal::Animal( const Animal &obj)
+AAnimal::AAnimal( const AAnimal &obj)
 {
-	std:: cout << "Animal Copy constructor called" << std::endl;
+	std:: cout << "AAnimal Copy constructor called" << std::endl;
     this->type = obj.type;
 	return ;
 }
 
-Animal &Animal::operator=( const Animal &obj)
+AAnimal &AAnimal::operator=( const AAnimal &obj)
 {
-	std:: cout << "Animal Copy assignement Operator called" << std::endl;
+	std:: cout << "AAnimal Copy assignement Operator called" << std::endl;
 	if (this != &obj)
 	{
 		this->type = obj.type;
@@ -40,7 +40,7 @@ Animal &Animal::operator=( const Animal &obj)
 	return *this;
 }
 
-std::string Animal::getType() const
+std::string AAnimal::getType() const
 {
     return type;
 }

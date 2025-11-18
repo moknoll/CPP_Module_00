@@ -5,9 +5,9 @@ CXX = c++
 CXX_FLAGS = -Wall -Werror -Wextra -std=c++98
 
 #Sources
-SRCS = main.cpp Dog.cpp AAnimal.cpp Cat.cpp 
+SRCS = main.cpp AMateria.cpp
 OBJS = $(SRCS:.cpp=.o)
-NAME = AbstractClass
+NAME = AMateria
 
 #Targets
 all: $(NAME)
