@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Brain.cpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mknoll <mknoll@student.42.fr>              +#+  +:+       +#+        */
+/*   By: moritzknoll <moritzknoll@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/17 13:48:20 by mknoll            #+#    #+#             */
-/*   Updated: 2025/11/17 14:13:32 by mknoll           ###   ########.fr       */
+/*   Updated: 2025/11/18 10:45:05 by moritzknoll      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,13 +14,14 @@
 
 Brain::Brain()
 {
-	std:: cout << "Constructor called for Brain" << std::endl;
+	// std:: cout << "Constructor called for Brain" << std::endl;
 	return ;
 }
 
 Brain::~Brain()
 {
 	std:: cout << "Destructor called for Brain" << std::endl;
+	return ; 
 }
 
 Brain::Brain( const Brain&obj)

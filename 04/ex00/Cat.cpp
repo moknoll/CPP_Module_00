@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Cat.cpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mknoll <mknoll@student.42.fr>              +#+  +:+       +#+        */
+/*   By: moritzknoll <moritzknoll@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/12 14:12:44 by mknoll            #+#    #+#             */
-/*   Updated: 2025/11/17 13:23:35 by mknoll           ###   ########.fr       */
+/*   Updated: 2025/11/18 10:40:45 by moritzknoll      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 Cat:: Cat() : Animal()
 {
-	std:: cout << "Default Constructor called for Cat" << std::endl;
+	// std:: cout << "Default Constructor called for Cat" << std::endl;
 	type = "Cat";
 	return ;	
 }
@@ -25,16 +25,15 @@ Cat:: ~Cat()
 	return ;
 }
 
-
 Cat::Cat( const Cat &obj): Animal(obj)
 {
-	std::cout << "Cat copy constructor called" << std::endl;
+	// std::cout << "Cat copy constructor called" << std::endl;
 	return ;
 }
 
 Cat &Cat:: operator=( const Cat &obj)
 {
-	std:: cout<< "Cat assignement constructor called";
+	// std:: cout<< "Cat assignement constructor called";
 	if(this != &obj)
 	{
 		Animal::operator=(obj);

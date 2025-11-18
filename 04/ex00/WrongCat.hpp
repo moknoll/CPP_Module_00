@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   WrongCat.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mknoll <mknoll@student.42.fr>              +#+  +:+       +#+        */
+/*   By: moritzknoll <moritzknoll@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/12 14:46:20 by mknoll            #+#    #+#             */
-/*   Updated: 2025/11/17 13:22:08 by mknoll           ###   ########.fr       */
+/*   Updated: 2025/11/18 10:33:32 by moritzknoll      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 
 #include "WrongAnimal.hpp"
 
+//static bindining
 class WrongCat: public WrongAnimal{
     public: 
         WrongCat(); 

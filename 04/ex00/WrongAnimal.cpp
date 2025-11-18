@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   WrongAnimal.cpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mknoll <mknoll@student.42.fr>              +#+  +:+       +#+        */
+/*   By: moritzknoll <moritzknoll@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/12 14:46:10 by mknoll            #+#    #+#             */
-/*   Updated: 2025/11/17 13:22:43 by mknoll           ###   ########.fr       */
+/*   Updated: 2025/11/18 10:40:33 by moritzknoll      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@
 #include "WrongAnimal.hpp"
 
 WrongAnimal:: WrongAnimal() : type("Animal"){
-    std::cout << "Default Constructor called for WrongAnimal" << std::endl;
+    // std::cout << "Default Constructor called for WrongAnimal" << std::endl;
     return ; 
 }
 

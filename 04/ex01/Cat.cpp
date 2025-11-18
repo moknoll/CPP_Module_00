@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Cat.cpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mknoll <mknoll@student.42.fr>              +#+  +:+       +#+        */
+/*   By: moritzknoll <moritzknoll@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/12 14:12:44 by mknoll            #+#    #+#             */
-/*   Updated: 2025/11/17 14:27:39 by mknoll           ###   ########.fr       */
+/*   Updated: 2025/11/18 12:15:27 by moritzknoll      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 Cat:: Cat() : Animal()
 {
 	brain = new Brain();
-	std:: cout << "Default Constructor called for Cat" << std::endl;
+	// std:: cout << "Default Constructor called for Cat" << std::endl;
 	type = "Cat";
 	return ;	
 }
@@ -30,16 +30,17 @@ Cat:: ~Cat()
 
 Cat::Cat( const Cat &obj): Animal(obj)
 {
-	std::cout << "Cat copy constructor called" << std::endl;
+	// std::cout << "Cat copy constructor called" << std::endl;
 	brain = new Brain(*obj.brain);
 	return ;
 }
 
 Cat &Cat:: operator=( const Cat &obj)
 {
-	std:: cout<< "Cat assignement constructor called" << std::endl;
+	// std:: cout<< "Cat assignement constructor called" << std::endl;
 	if(this != &obj)
 	{
+		// Copies all attributes of class Animal
 		Animal::operator=(obj);
 		delete brain;
 		brain = new Brain(*obj.brain);

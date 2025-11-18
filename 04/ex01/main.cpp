@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mknoll <mknoll@student.42.fr>              +#+  +:+       +#+        */
+/*   By: moritzknoll <moritzknoll@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/11 12:18:59 by moritzknoll       #+#    #+#             */
-/*   Updated: 2025/11/17 14:29:32 by mknoll           ###   ########.fr       */
+/*   Updated: 2025/11/18 12:15:25 by moritzknoll      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,11 +15,9 @@
 
 int main()
 {
-	const Animal* j = new Dog();
-	const Animal* i = new Cat();
 
 	const int arraySize = 10;
-	Animal* animalsArray[arraySize];
+	const Animal* animalsArray[arraySize];
 	
 	for(int x = 0; x < arraySize; x++)
 	{
@@ -28,20 +26,27 @@ int main()
 		else 
 			animalsArray[x] = new Dog();
 	}
-
-	//test for deep copies 
-	std::cout << "\n=== Testing Deep Copy ===" << std::endl;
-	Cat originalCat;
-	Cat copiedCat = originalCat;
+	std::cout << "\n=== Testing Array Contents ===" << std::endl;
+	for(int x = 0; x < arraySize; x++)
+	{
+		std::cout << "Index " << x << ": " << animalsArray[x]->getType() << " says: ";
+		animalsArray[x]->makeSound(); 
+	}
+	std::cout << "\n=== Deep Copy Tests ===" << std::endl;
+	std::cout << "1. Creating original cat" << std::endl;
+	Cat original;
+	std::cout << "2. Copy constructor test" << std::endl;
+	Cat copied = original;
+	std::cout << "3. Assignment operator test" << std::endl;
+	Cat assigned;
+	assigned = original;  // Calls assignment operator
+	std::cout << "4. All cats work independently:" << std::endl;
+	original.makeSound();
+	copied.makeSound();
+	assigned.makeSound();
 	
-	Cat assignedCat;
-	assignedCat = originalCat;
+	std::cout << "\n=== End of Testing ===" << std::endl;
 	
-	// Clean up single animals
-	delete j;
-	delete i;
-	
-	// Clean up array
 	for(int x = 0; x < arraySize; x++)
 	{
 		delete animalsArray[x];

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   WrongAnimal.hpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mknoll <mknoll@student.42.fr>              +#+  +:+       +#+        */
+/*   By: moritzknoll <moritzknoll@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/12 14:46:13 by mknoll            #+#    #+#             */
-/*   Updated: 2025/11/17 13:22:15 by mknoll           ###   ########.fr       */
+/*   Updated: 2025/11/18 10:33:27 by moritzknoll      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,13 +15,14 @@
 #include <iostream>
 #include <string>
 
+//static bindining
 class WrongAnimal{
     protected: 
         std::string type; 
     
     public:
         WrongAnimal(); 
-        ~WrongAnimal(); //not virtual    
+        ~WrongAnimal(); //not virtual
         std::string getType() const ;
         void makeSound() const; // not virtual 
 }; 
