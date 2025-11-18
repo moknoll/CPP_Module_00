@@ -1,33 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   WrongCat.cpp                                       :+:      :+:    :+:   */
+/*   Dog.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mknoll <mknoll@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/11/12 14:46:15 by mknoll            #+#    #+#             */
-/*   Updated: 2025/11/17 13:22:34 by mknoll           ###   ########.fr       */
+/*   Created: 2025/11/12 13:55:25 by mknoll            #+#    #+#             */
+/*   Updated: 2025/11/17 13:56:23 by mknoll           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#ifndef DOG_HPP
+#define DOG_HPP
 
-#include "WrongCat.hpp"
+#include "Animal.hpp"
+#include "Brain.hpp"
 
-WrongCat:: WrongCat() : WrongAnimal()
-{
-	std:: cout << "Default Constructor called for Wrongcat" << std::endl;
-	type = "Cat";
-	return ;	
-}
+class Dog: public Animal{
+    private: 
+        Brain *brain;
+    public: 
+        Dog(); 
+        ~Dog(); 
+        Dog( const Dog &obj);
+        Dog &operator=( const Dog &obj);
+		void makeSound() const;
+};
 
-WrongCat:: ~WrongCat()
-{
-	std:: cout << "Destructor called for Wrongcat" << std::endl;
-	return ;
-}
-
-void WrongCat::makeSound() const 
-{
-	std::cout << "Wrong Woof Woof" << std::endl;
-	return ;	
-}
+#endif

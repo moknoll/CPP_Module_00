@@ -6,7 +6,7 @@
 /*   By: mknoll <mknoll@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/07 09:15:03 by moritzknoll       #+#    #+#             */
-/*   Updated: 2025/11/12 11:49:18 by mknoll           ###   ########.fr       */
+/*   Updated: 2025/11/17 11:53:31 by mknoll           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,6 +74,11 @@ DiamondTrap &DiamondTrap::operator=( const DiamondTrap &obj)
 	return *this;
 }
 
+
+void DiamondTrap::attack(const std::string& target)
+{
+    ScavTrap::attack(target);
+}
 
 void DiamondTrap::whoAmI()
 {

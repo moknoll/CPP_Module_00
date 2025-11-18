@@ -6,7 +6,7 @@
 /*   By: mknoll <mknoll@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/12 14:46:10 by mknoll            #+#    #+#             */
-/*   Updated: 2025/11/12 14:56:16 by mknoll           ###   ########.fr       */
+/*   Updated: 2025/11/17 13:22:43 by mknoll           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,19 +35,6 @@ WrongAnimal:: ~WrongAnimal()
     return ;
 }
 
-// Animal:: Animal(const Animal &obj) : type("Animal")
-// {
-//     std::cout << "Copy constructor called for Animal" << std::endl;
-//     return ;
-// }
-
-
-// Animal:: Animal operator=(const Animal &obj )
-// {
-
-//     return; 
-// }
-
 std::string WrongAnimal::getType() const
 {
     return type;
@@ -55,6 +42,6 @@ std::string WrongAnimal::getType() const
 
 void WrongAnimal::makeSound() const
 {
-    std:: cout << "Some other wrong Animal noise..." << std::endl; 
+    std:: cout << "Some other WRONG Animal noise..." << std::endl; 
     return ;
 }

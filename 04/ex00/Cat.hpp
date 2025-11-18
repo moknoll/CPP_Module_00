@@ -6,7 +6,7 @@
 /*   By: mknoll <mknoll@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/12 13:55:38 by mknoll            #+#    #+#             */
-/*   Updated: 2025/11/12 14:49:28 by mknoll           ###   ########.fr       */
+/*   Updated: 2025/11/17 10:52:11 by mknoll           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,9 +19,8 @@ class Cat: public Animal{
     public: 
         Cat(); 
         ~Cat(); 
-        // Cat(std::string name);
-        // Cat( const Cat &obj);
-        // Cat &operator=( const Cat &obj);
+        Cat( const Cat &obj);
+        Cat &operator=( const Cat &obj);
 		void makeSound() const ;
 
 };

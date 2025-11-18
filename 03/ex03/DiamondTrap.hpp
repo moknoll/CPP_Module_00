@@ -6,7 +6,7 @@
 /*   By: mknoll <mknoll@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/05 14:33:16 by mknoll            #+#    #+#             */
-/*   Updated: 2025/11/12 11:47:29 by mknoll           ###   ########.fr       */
+/*   Updated: 2025/11/17 11:52:13 by mknoll           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,7 @@ class DiamondTrap: virtual public ScavTrap, virtual public FragTrap{
 		DiamondTrap(const DiamondTrap &obj);
 		DiamondTrap &operator=(const DiamondTrap &obj);
 
+		void attack(const std::string& target);
 		void whoAmI();
 };
 
