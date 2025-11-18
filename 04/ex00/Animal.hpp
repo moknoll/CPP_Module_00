@@ -1,17 +1,17 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   polymorphism.hpp                                   :+:      :+:    :+:   */
+/*   Animal.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: moritzknoll <moritzknoll@student.42.fr>    +#+  +:+       +#+        */
+/*   By: mknoll <mknoll@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/11 12:18:57 by moritzknoll       #+#    #+#             */
-/*   Updated: 2025/11/11 20:22:09 by moritzknoll      ###   ########.fr       */
+/*   Updated: 2025/11/12 14:43:22 by mknoll           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef POLYMORPHISM_HPP
-#define POLYMORPHISM_HPP
+#ifndef ANIMAL_HPP
+#define ANIMAL_HPP
 #include <iostream>
 #include <string>
 
@@ -21,33 +21,13 @@ class Animal{
     
     public:
         Animal(); 
-        ~Animal(); 
-        void Animal();
-
-        std::string getType() const; 
-        void        setType(std:: string name); 
+        virtual ~Animal(); 
+        // Animal();
+        // Animal( const Animal &obj);
+        // Animal &operator=( const Animal &obj);
+        
+        std::string getType() const ;
+        virtual void makeSound() const;
 }; 
-
-class Dog: public Animal{
-    private: 
-        std::string name; 
-    public: 
-        Dog(); 
-        ~Dog(); 
-        Dog(std::string name); 
-
-        void makeSound();
-}; 
-
-class Cat: public Animal{
-    private: 
-        std::string name; 
-    public: 
-        Cat(); 
-        ~Cat(); 
-        Cat(std::string name); 
-
-        void makeSound();
-};
 
 #endif

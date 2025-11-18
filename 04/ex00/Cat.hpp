@@ -1,34 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   DiamondTrap.hpp                                    :+:      :+:    :+:   */
+/*   Cat.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mknoll <mknoll@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/11/05 14:33:16 by mknoll            #+#    #+#             */
-/*   Updated: 2025/11/12 11:47:29 by mknoll           ###   ########.fr       */
+/*   Created: 2025/11/12 13:55:38 by mknoll            #+#    #+#             */
+/*   Updated: 2025/11/12 14:49:28 by mknoll           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef DIAMOND_TRAP_HPP
-#define DIAMOND_TRAP_HPP
+#ifndef CAT_HPP
+#define CAT_HPP
 
-#include "FragTrap.hpp"
+#include "Animal.hpp"
 
-class DiamondTrap: virtual public ScavTrap, virtual public FragTrap{
-	private: 
-		std::string name;
-		
-	public: 
-		DiamondTrap();
-		~DiamondTrap(); 
-		DiamondTrap(std:: string name);
-		DiamondTrap(const DiamondTrap &obj);
-		DiamondTrap &operator=(const DiamondTrap &obj);
+class Cat: public Animal{
+    public: 
+        Cat(); 
+        ~Cat(); 
+        // Cat(std::string name);
+        // Cat( const Cat &obj);
+        // Cat &operator=( const Cat &obj);
+		void makeSound() const ;
 
-		void whoAmI();
 };
-
-
 
 #endif

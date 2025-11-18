@@ -6,7 +6,7 @@
 /*   By: mknoll <mknoll@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/31 13:19:25 by mknoll            #+#    #+#             */
-/*   Updated: 2025/10/31 18:58:26 by mknoll           ###   ########.fr       */
+/*   Updated: 2025/11/12 11:13:08 by mknoll           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ int main(){
 	Alice.attack("Enemy2");
 	Alice.beRepaired(5);
 	Alice.takeDamage(15);
-	Alice.attack("Enemy3"); // Should fail - no hit points
+	Alice.attack("Enemy3");
 	
 	std::cout << "\n=== End of Tests ===" << std::endl;
 	

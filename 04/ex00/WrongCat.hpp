@@ -1,34 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   DiamondTrap.hpp                                    :+:      :+:    :+:   */
+/*   WrongCat.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mknoll <mknoll@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/11/05 14:33:16 by mknoll            #+#    #+#             */
-/*   Updated: 2025/11/12 11:47:29 by mknoll           ###   ########.fr       */
+/*   Created: 2025/11/12 14:46:20 by mknoll            #+#    #+#             */
+/*   Updated: 2025/11/12 14:56:32 by mknoll           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef DIAMOND_TRAP_HPP
-#define DIAMOND_TRAP_HPP
+#ifndef WRONG_CAT_HPP
+#define WRONG_CAT_HPP
 
-#include "FragTrap.hpp"
+#include "WrongAnimal.hpp"
 
-class DiamondTrap: virtual public ScavTrap, virtual public FragTrap{
-	private: 
-		std::string name;
-		
-	public: 
-		DiamondTrap();
-		~DiamondTrap(); 
-		DiamondTrap(std:: string name);
-		DiamondTrap(const DiamondTrap &obj);
-		DiamondTrap &operator=(const DiamondTrap &obj);
+class WrongCat: public WrongAnimal{
+    public: 
+        WrongCat(); 
+        ~WrongCat(); 
+        // Cat(std::string name);
+        // Cat( const Cat &obj);
+        // Cat &operator=( const Cat &obj);
+		void makeSound() const ; // This does not override 
 
-		void whoAmI();
 };
-
-
 
 #endif

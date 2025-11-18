@@ -6,7 +6,7 @@
 /*   By: mknoll <mknoll@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/31 14:29:43 by mknoll            #+#    #+#             */
-/*   Updated: 2025/10/31 16:30:04 by mknoll           ###   ########.fr       */
+/*   Updated: 2025/11/12 11:41:03 by mknoll           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@ ScavTrap::ScavTrap() : ClapTrap(){
 	this->energyPoints = 50;
 	this->attackDamage = 20;
 	std::cout << "ScavTrap default constructor called" << std::endl;
+	return ;
 }
 
 ScavTrap::ScavTrap( std::string name): ClapTrap(name){
@@ -27,11 +28,36 @@ ScavTrap::ScavTrap( std::string name): ClapTrap(name){
 	std::cout << "Hit Points: " << this->hitPoints << std::endl;
 	std::cout << "Energy Points: " << this->energyPoints << std::endl;
 	std::cout << "Attack Damage: " << this->attackDamage << std::endl;
+	return ;
 }
 
 ScavTrap::~ScavTrap(){
 	std::cout << "ScavTrap Destructor called" <<std::endl;
+	return ;
 }
+
+ScavTrap::ScavTrap( const ScavTrap &obj) : ClapTrap(obj)
+{
+	std:: cout << "ScavTrap Copy constructor called" << std::endl;
+	this->hitPoints = 100;
+	this->energyPoints = 50;
+	this->attackDamage = 20;
+	return ;
+}
+
+ScavTrap &ScavTrap::operator=( const ScavTrap &obj)
+{
+	std:: cout << "ScavTrap Copy assignement Operator called" << std::endl;
+	if (this != &obj)
+	{
+		ClapTrap::operator=(obj);
+		this->hitPoints = 100;
+		this->energyPoints = 50;
+		this->attackDamage = 20;
+	}
+	return *this;
+}
+
 
 void ScavTrap::guardGate(){
 	std::cout << "ScavTrap is now in Gate keeper mode" << std::endl;

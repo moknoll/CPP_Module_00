@@ -1,34 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   DiamondTrap.hpp                                    :+:      :+:    :+:   */
+/*   WrongCat.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mknoll <mknoll@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/11/05 14:33:16 by mknoll            #+#    #+#             */
-/*   Updated: 2025/11/12 11:47:29 by mknoll           ###   ########.fr       */
+/*   Created: 2025/11/12 14:46:15 by mknoll            #+#    #+#             */
+/*   Updated: 2025/11/12 14:57:49 by mknoll           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef DIAMOND_TRAP_HPP
-#define DIAMOND_TRAP_HPP
 
-#include "FragTrap.hpp"
+#include "WrongCat.hpp"
 
-class DiamondTrap: virtual public ScavTrap, virtual public FragTrap{
-	private: 
-		std::string name;
-		
-	public: 
-		DiamondTrap();
-		~DiamondTrap(); 
-		DiamondTrap(std:: string name);
-		DiamondTrap(const DiamondTrap &obj);
-		DiamondTrap &operator=(const DiamondTrap &obj);
+WrongCat:: WrongCat() : WrongAnimal()
+{
+	std:: cout << "Default Constructor called for Wrongcat" << std::endl;
+	type = "Cat";
+	return ;	
+}
 
-		void whoAmI();
-};
+WrongCat:: ~WrongCat()
+{
+	std:: cout << "Destructor called for Wrongcat" << std::endl;
+	return ;
+}
 
-
-
-#endif
+void WrongCat::makeSound() const 
+{
+	std::cout << "Wrong Miau Miau" << std::endl;
+	return ;	
+}

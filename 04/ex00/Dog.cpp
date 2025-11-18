@@ -1,34 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   DiamondTrap.hpp                                    :+:      :+:    :+:   */
+/*   Dog.cpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mknoll <mknoll@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/11/05 14:33:16 by mknoll            #+#    #+#             */
-/*   Updated: 2025/11/12 11:47:29 by mknoll           ###   ########.fr       */
+/*   Created: 2025/11/12 13:57:20 by mknoll            #+#    #+#             */
+/*   Updated: 2025/11/12 14:39:50 by mknoll           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef DIAMOND_TRAP_HPP
-#define DIAMOND_TRAP_HPP
+#include "Dog.hpp"
 
-#include "FragTrap.hpp"
+Dog::Dog() : Animal()
+{
+	std::cout << "Default constructor called for Dog" << std::endl;
+	type = "Dog";
+	return ;
+}
 
-class DiamondTrap: virtual public ScavTrap, virtual public FragTrap{
-	private: 
-		std::string name;
-		
-	public: 
-		DiamondTrap();
-		~DiamondTrap(); 
-		DiamondTrap(std:: string name);
-		DiamondTrap(const DiamondTrap &obj);
-		DiamondTrap &operator=(const DiamondTrap &obj);
+Dog:: ~Dog()
+{
+	std::cout << "Destructor called for dog" << std::endl;
+	return ;
+}
 
-		void whoAmI();
-};
+void Dog::makeSound() const 
+{
+	std::cout << "Woof Woof" << std::endl;
+	return ;	
+}
 
-
-
-#endif
