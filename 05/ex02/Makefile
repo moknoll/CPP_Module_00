@@ -25,5 +25,6 @@ clean:
 
 fclean: 
 	rm -f $(NAME) $(OBJS)
+	rm -f Home_shrubbery
 
 re: clean all
