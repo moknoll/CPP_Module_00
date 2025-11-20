@@ -6,7 +6,7 @@
 /*   By: moritzknoll <moritzknoll@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/19 08:39:11 by moritzknoll       #+#    #+#             */
-/*   Updated: 2025/11/20 14:56:59 by moritzknoll      ###   ########.fr       */
+/*   Updated: 2025/11/20 15:07:53 by moritzknoll      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,9 +27,9 @@ int main()
     Bureaucrat lowRank("Ross", 145); // Can Only Sign Shrubbery
     
     
-    PresidentialPardonForm PPForm("Criminal_Bob");    // sign: 25, exec: 5
+    PresidentialPardonForm PPForm("Hunter Biden");    // sign: 25, exec: 5
     ShrubberyCreationForm SCForm("Home");             // sign: 145, exec: 137  
-    RobotomyRequestForm RRForm("Target_Ross");     // sign: 72, exec: 45
+    RobotomyRequestForm RRForm("Marvin");     // sign: 72, exec: 45
 
     try
     {
@@ -50,7 +50,7 @@ int main()
     
     // Test Presidential Pardon Form signing
     try {
-        PPForm.beSigned(midRank);  // Alice should not be able to sign as you need grade 5 
+        PPForm.beSigned(highRank);  // Alice should not be able to sign as you need grade 5 
         std::cout << "PPForm signed by " << highRank.getName() << std::endl;
     } catch(std::exception &e) {
         std::cerr << "PPForm signing error: " << e.what() << std::endl;
@@ -58,7 +58,7 @@ int main()
     
     // Test Shrubbery Creation Form signing  
     try {
-        SCForm.beSigned(lowRank);  // Ross (grade 150) should not sign
+        SCForm.beSigned(midRank);  // Ross (grade 150) should not sign
         std::cout << "SCForm signed by " << lowRank.getName() << std::endl;
     } catch(std::exception &e) {
         std::cerr << "SCForm signing error: " << e.what() << std::endl;
@@ -83,7 +83,7 @@ int main()
     
     // Test Shrubbery Creation Form execution
     try {
-        SCForm.execute(lowRank);  // Ross (grade 150) should be able to execute
+        SCForm.execute(midRank);  // Ross (grade 150) should be able to execute
     } catch(std::exception &e) {
         std::cerr << "SCForm execution error: " << e.what() << std::endl;
     }
