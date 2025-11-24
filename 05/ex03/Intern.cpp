@@ -6,7 +6,7 @@
 /*   By: moritzknoll <moritzknoll@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/21 08:51:57 by moritzknoll       #+#    #+#             */
-/*   Updated: 2025/11/21 09:20:10 by moritzknoll      ###   ########.fr       */
+/*   Updated: 2025/11/24 09:04:58 by moritzknoll      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,14 +46,15 @@ AForm *Intern::makeForm(const std::string &formName, const std::string &target)
     if (target.empty())
         throw std::invalid_argument("No target input");
     
-    int formType = -1;
-    if (formName == "ShrubberyCreationForm")
-        formType = 0;
-    else if (formName == "PresidentialPardonForm")
-        formType = 1;
-    else if (formName == "RobotomyRequestForm")
-        formType = 2;
+    int formType; 
+    std::string form[3] = {"ShrubberyCreationForm", "PresidentialPardonForm", "RobotomyRequestForm"}; 
     
+    for(int i = 0; i < 3; i++)
+    {
+        if (form[i] == formName)
+            formType = i; 
+    }
+        
     switch (formType)
     {
         case 0:

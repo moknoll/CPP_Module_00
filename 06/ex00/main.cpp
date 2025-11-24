@@ -6,7 +6,7 @@
 /*   By: moritzknoll <moritzknoll@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/21 10:36:33 by moritzknoll       #+#    #+#             */
-/*   Updated: 2025/11/21 10:38:27 by moritzknoll      ###   ########.fr       */
+/*   Updated: 2025/11/24 11:01:30 by moritzknoll      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 int main(int argc, char *argv[])
 {
     if (argc != 2)
-        return (std::cerr << "Only one parameter as input" << std::endl, 1); 
+        return (std::cout << "Only one parameter as input" << std::endl, 1); 
     ScalarConverter::convert(argv[1]); 
     return 0; 
 }
