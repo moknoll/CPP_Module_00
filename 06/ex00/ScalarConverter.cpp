@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ScalarConverter.cpp                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: moritzknoll <moritzknoll@student.42.fr>    +#+  +:+       +#+        */
+/*   By: mknoll <mknoll@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/21 10:32:49 by moritzknoll       #+#    #+#             */
-/*   Updated: 2025/11/24 11:04:24 by moritzknoll      ###   ########.fr       */
+/*   Updated: 2025/11/25 11:53:52 by mknoll           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -157,6 +157,7 @@ bool ScalarConverter::isInt(const std::string &literal)
     }
     return true; 
 }
+
 bool ScalarConverter::isFloat(const std::string &literal)
 {
     bool hasDecimal = false; 

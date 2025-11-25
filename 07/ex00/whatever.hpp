@@ -1,25 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Base.hpp                                           :+:      :+:    :+:   */
+/*   whatever.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mknoll <mknoll@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/11/24 12:15:30 by moritzknoll       #+#    #+#             */
-/*   Updated: 2025/11/25 10:58:03 by mknoll           ###   ########.fr       */
+/*   Created: 2025/11/25 11:08:57 by mknoll            #+#    #+#             */
+/*   Updated: 2025/11/25 12:43:27 by mknoll           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef BASE_HPP
-#define BASE_HPP
+#ifndef WHATEVER_HPP
+#define WHATEVER_HPP
+#include <iostream>
 
-class Base
-{
-    public: 
-    virtual ~Base(); 
-    static Base * generate(void);
-    static void identify(Base* p);
-    static void identify(Base& p);
-};
+
+template <typename T>
+void swap(T& a, T& b) {
+    T tmp = a;
+    a = b;
+    b = tmp;
+}
+
+template <typename T>
+T min(const T& a, const T& b) {
+    return (a < b) ? a : b;
+}
+
+template <typename T>
+T max(const T& a, const T& b) {
+    return (a > b) ? a : b;
+}
 
 #endif
