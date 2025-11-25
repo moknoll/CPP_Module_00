@@ -6,7 +6,11 @@
 /*   By: mknoll <mknoll@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/21 08:51:57 by moritzknoll       #+#    #+#             */
+<<<<<<< HEAD
 /*   Updated: 2025/11/21 12:51:21 by mknoll           ###   ########.fr       */
+=======
+/*   Updated: 2025/11/24 09:04:58 by moritzknoll      ###   ########.fr       */
+>>>>>>> a7d49595036b223b0dd1a81bb89985df9d8e0f2b
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,7 +61,7 @@ AForm *Intern::makeForm(const std::string &formName, const std::string &target)
             break;
         }
     }
-    
+        
     switch (formType)
     {
         case 0:
