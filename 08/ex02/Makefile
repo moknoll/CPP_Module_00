@@ -7,7 +7,7 @@ CXX_FLAGS = -Wall -Werror -Wextra -std=c++98
 #Sources
 SRCS = main.cpp 
 OBJS = $(SRCS:.cpp=.o)
-NAME = array
+NAME = mutantStack
 #Targets
 all: $(NAME)
 

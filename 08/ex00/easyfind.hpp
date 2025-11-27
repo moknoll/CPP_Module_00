@@ -3,17 +3,18 @@
 /*                                                        :::      ::::::::   */
 /*   easyfind.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mknoll <mknoll@student.42.fr>              +#+  +:+       +#+        */
+/*   By: moritzknoll <moritzknoll@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/27 10:42:05 by mknoll            #+#    #+#             */
-/*   Updated: 2025/11/27 11:00:27 by mknoll           ###   ########.fr       */
+/*   Updated: 2025/11/27 12:27:13 by moritzknoll      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef EASYFIND_HPP
 #define EASYFIND_HPP
-#include <algorithm>
-#include <stdexcept>
+// #include <algorithm>
+#include <exception>
+#include <iostream>
 
 template <typename T> 
 typename T::iterator easyfind(T& container, int num)
@@ -23,7 +24,7 @@ typename T::iterator easyfind(T& container, int num)
 	
 	// if it is at te end, so didn't find num throw exception
 	if (it == container.end())
-		throw std::cout << "Number not found in container" << std::endl;
+		throw std::out_of_range("Number not found in container");
 	return it;
 }
  

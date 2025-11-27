@@ -5,9 +5,9 @@ CXX = c++
 CXX_FLAGS = -Wall -Werror -Wextra -std=c++98
 
 #Sources
-SRCS = main.cpp 
+SRCS = main.cpp Span.cpp
 OBJS = $(SRCS:.cpp=.o)
-NAME = array
+NAME = Span
 #Targets
 all: $(NAME)
 

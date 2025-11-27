@@ -1,39 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   whatever.hpp                                       :+:      :+:    :+:   */
+/*   Span.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: moritzknoll <moritzknoll@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/11/25 11:08:57 by mknoll            #+#    #+#             */
-/*   Updated: 2025/11/27 09:10:20 by moritzknoll      ###   ########.fr       */
+/*   Created: 2025/11/27 12:41:37 by moritzknoll       #+#    #+#             */
+/*   Updated: 2025/11/27 12:49:44 by moritzknoll      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef WHATEVER_HPP
-#define WHATEVER_HPP
+#ifndef SPAN_HPP
+#define SPAN_HPP
 #include <iostream>
+#include <exception>
+#include <vector>
 
-
-template <typename T>
-void swap(T& a, T& b) 
+class Span
 {
-    T tmp = a;
-    a = b;
-    b = tmp;
-}
+    private: 
+    unsigned int        N;
+    std::vector<int>    _numbers; 
+    
+    public: 
+    Span(); 
+    Span(unsigned int N); 
+    Span(const Span &obj);
+    Span &operator=(const Span &obj);  
+    ~Span(); 
 
-template <typename T>
-T min(const T& a, const T& b) 
-{
-    if (a < b) ? a : b;
-    return 
-}
-
-template <typename T>
-T max(const T& a, const T& b) 
-{
-    return (a > b) ? a : b;
-}
+    void addNumber(int number);
+    const unsigned int shortestSpan() const; 
+    const unsigned int longestSpan() const; 
+};
 
 #endif

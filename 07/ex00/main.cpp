@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mknoll <mknoll@student.42.fr>              +#+  +:+       +#+        */
+/*   By: moritzknoll <moritzknoll@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/25 11:08:52 by mknoll            #+#    #+#             */
-/*   Updated: 2025/11/25 12:40:51 by mknoll           ###   ########.fr       */
+/*   Updated: 2025/11/27 09:08:20 by moritzknoll      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,10 +18,12 @@ int main()
 {
 	int a = 2;
 	int b = 3;
+	int f = 3; 
 	::swap( a, b );
 	std::cout << "a = " << a << ", b = " << b << std::endl;
 	std::cout << "min( a, b ) = " << ::min( a, b ) << std::endl;
 	std::cout << "max( a, b ) = " << ::max( a, b ) << std::endl;
+	std::cout << "min( b, f ) = " << ::min( b, f ) << std::endl; 
 	std::string c = "chaine1";
 	std::string d = "chaine2";
 	::swap(c, d);

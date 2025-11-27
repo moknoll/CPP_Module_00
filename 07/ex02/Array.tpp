@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Array.tpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mknoll <mknoll@student.42.fr>              +#+  +:+       +#+        */
+/*   By: moritzknoll <moritzknoll@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/25 13:45:39 by mknoll            #+#    #+#             */
-/*   Updated: 2025/11/25 14:52:55 by mknoll           ###   ########.fr       */
+/*   Updated: 2025/11/27 08:55:55 by moritzknoll      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ Array<T>::Array() : _data(NULL), _size(0){};
 template <typename T>
 Array<T>::Array(unsigned int n) : _data(new T[n]), _size(n)
 {
-	std::cout << "construcotr called with size" << n << std::endl;
+	std::cout << "construcotr called with size " << n << std::endl;
 }
 
 template <typename T>
@@ -33,7 +33,7 @@ Array<T>::Array(const Array<T> &obj) :_data(NULL), _size(0)
 template <typename T>
 Array<T> &Array<T>::operator=(const Array<T> &obj)
 {
-	std::cout << "Copy assignement construcor caleled" << std::endl;
+	std::cout << "Copy assignement construcor called" << std::endl;
 	if(this != &obj)
 	{
 		// delete old data
