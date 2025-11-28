@@ -6,7 +6,7 @@
 /*   By: mknoll <mknoll@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/27 14:47:07 by mknoll            #+#    #+#             */
-/*   Updated: 2025/11/28 12:05:55 by mknoll           ###   ########.fr       */
+/*   Updated: 2025/11/28 13:44:02 by mknoll           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,17 +41,17 @@ class MutantStack : public std::stack<T>
 		const_iterator end() const;
 };
 
-template <typename T> 
-int easyfind(T& container, int num)
-{
-	// iterator through container begin to container end if finds num
-	typename T::iterator found = std::find(container.begin(), container.end(), num);
+// template <typename T> 
+// int easyfind(T& container, int num)
+// {
+// 	// iterator through container begin to container end if finds num
+// 	typename T::iterator found = std::find(container.begin(), container.end(), num);
 	
-	// if it is at te end, so didn't find num throw exception
-	if (found == container.end())
-		throw std::out_of_range("Number not found in container");
-	return *found;
-}
+// 	// if it is at te end, so didn't find num throw exception
+// 	if (found == container.end())
+// 		throw std::out_of_range("Number not found in container");
+// 	return *found;
+// }
 
 #include "MutantStack.tpp"
 

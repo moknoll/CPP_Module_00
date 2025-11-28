@@ -6,11 +6,14 @@
 /*   By: mknoll <mknoll@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/27 13:03:12 by mknoll            #+#    #+#             */
-/*   Updated: 2025/11/27 14:34:03 by mknoll           ###   ########.fr       */
+/*   Updated: 2025/11/28 15:37:48 by mknoll           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Span.hpp"
+#include <vector>
+#include <algorithm>
+#include <exception>
 
 int main()
 {
@@ -21,8 +24,40 @@ int main()
 	sp.addNumber(17);
 	sp.addNumber(9);
 	sp.addNumber(11);
+
+	std::cout << "=== Existing Span ===" << std::endl;
+	sp.printNumbers();
 	
-	std::cout << sp.shortestSpan() << std::endl;
-	std::cout << sp.longestSpan() << std::endl;
+	std::cout << "\n===Try adding number to Full Span ===" << std::endl;
+	try 
+	{
+		sp.addNumber(10);
+	}
+	catch(std::exception &e)
+	{
+		std::cout <<"ERROR: " << e.what() << std::endl;
+	}	
+	try {
+		std::cout << "\n=== Test spans ===" << std::endl;
+		std::cout << "Shortest span: " << sp.shortestSpan() << std::endl;
+		std::cout << "Longest span: " <<sp.longestSpan() << std::endl;
+	}
+	catch(std::exception &e)
+	{
+		std::cout << "ERROR: " << e.what() << std::endl;
+	}
+
+	try 
+	{
+		std::cout << "\n=== Test with 1 element ===" << std::endl;
+		Span sp2 = Span(1);
+		sp2.addNumber(1);
+		std::cout << sp2.shortestSpan() << std::endl;
+		//std::cout << "Longest Span: " << sp.shortestSpan() << std::endl;
+	}
+	catch(std::exception &e)
+	{
+		std::cout << "ERROR: " << e.what() << std::endl;
+	}
 	return 0;
 }

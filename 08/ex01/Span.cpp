@@ -6,7 +6,7 @@
 /*   By: mknoll <mknoll@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/27 12:41:35 by moritzknoll       #+#    #+#             */
-/*   Updated: 2025/11/27 14:38:55 by mknoll           ###   ########.fr       */
+/*   Updated: 2025/11/28 15:38:14 by mknoll           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,10 +31,7 @@ Span &Span::operator=(const Span &obj)
 	return *this;
 }
 
-Span::~Span()
-{
-	std::cout << "Destructor called for span" << std::endl;
-}
+Span::~Span(){}
 
 void Span::addNumber(int number)
 {
@@ -74,7 +71,13 @@ unsigned int Span::longestSpan() const
 	// return a iterator pointing to the smallest or largerst number 
 	std::vector<int>::const_iterator min_it = std::min_element(_numbers.begin(), _numbers.end());
 	std::vector<int>::const_iterator max_it = std::max_element(_numbers.begin(), _numbers.end());
-	return *max_it - *min_it;
+	return (*max_it - *min_it);
 }
 
+void Span::printNumbers() const
+{	
+	// Iterator to print the span 
+	for(std::vector<int>::const_iterator it = _numbers.begin(); it != _numbers.end(); it++)
+		std::cout << *it << std::endl;
+}
 

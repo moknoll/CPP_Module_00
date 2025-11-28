@@ -6,7 +6,7 @@
 /*   By: mknoll <mknoll@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/27 12:41:37 by moritzknoll       #+#    #+#             */
-/*   Updated: 2025/11/27 14:12:17 by mknoll           ###   ########.fr       */
+/*   Updated: 2025/11/28 15:33:34 by mknoll           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,7 @@ class Span
     void addNumber(int number);
     unsigned int shortestSpan() const; 
     unsigned int longestSpan() const; 
+    void printNumbers() const;
 };
 
 #endif
