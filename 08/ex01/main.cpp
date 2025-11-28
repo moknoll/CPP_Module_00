@@ -6,7 +6,7 @@
 /*   By: mknoll <mknoll@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/27 13:03:12 by mknoll            #+#    #+#             */
-/*   Updated: 2025/11/28 15:37:48 by mknoll           ###   ########.fr       */
+/*   Updated: 2025/11/28 15:57:38 by mknoll           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,11 +49,21 @@ int main()
 
 	try 
 	{
-		std::cout << "\n=== Test with 1 element ===" << std::endl;
+		std::cout << "\n=== Test shortest span with 1 element ===" << std::endl;
 		Span sp2 = Span(1);
 		sp2.addNumber(1);
 		std::cout << sp2.shortestSpan() << std::endl;
-		//std::cout << "Longest Span: " << sp.shortestSpan() << std::endl;
+		}
+	catch(std::exception &e)
+	{
+		std::cout << "ERROR: " << e.what() << std::endl;
+	}
+	try 
+	{
+		std::cout << "\n=== Test longest span with 1 element ===" << std::endl;
+		Span sp2 = Span(1);
+		sp2.addNumber(1);
+		std::cout << sp2.shortestSpan() << std::endl;
 	}
 	catch(std::exception &e)
 	{
