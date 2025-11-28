@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: moritzknoll <moritzknoll@student.42.fr>    +#+  +:+       +#+        */
+/*   By: mknoll <mknoll@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/27 10:41:59 by mknoll            #+#    #+#             */
-/*   Updated: 2025/11/27 12:36:47 by moritzknoll      ###   ########.fr       */
+/*   Updated: 2025/11/28 10:53:07 by mknoll           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,6 +67,19 @@ int main()
     catch(std::exception &e) 
     {
         std::cerr << "Error: " << e.what() << std::endl;
+    }
+
+    std::vector<int> vector2;
+    std::cout << "=== Test empty Vector ===" << std::endl; 
+    try
+    {
+        std::cout << "Searching for 3 in  empty vector" << std::endl;
+        easyfind(vector2, 3);
+        std::cout << "Found 3 in v " << std::endl;   
+    }
+    catch(std::exception &e)
+    {
+        std::cout << e.what() << std::endl;
     }
 
     return 0; 
