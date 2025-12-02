@@ -6,7 +6,7 @@
 /*   By: mknoll <mknoll@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/28 13:26:39 by mknoll            #+#    #+#             */
-/*   Updated: 2025/12/02 13:05:50 by mknoll           ###   ########.fr       */
+/*   Updated: 2025/12/02 13:26:40 by mknoll           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,8 +30,8 @@ class DatesAndPrices
 		~DatesAndPrices(); 
 
 		// Methods
-		double priceForDate(const std::string& date) const;  // ✅ Proper signature
-		void loadDatabase(const std::string& filename);      // ✅ New method
+		double priceForDate(const std::string& date) const;  //  Proper signature
+		void loadDatabase(const std::string& filename);      //  New method
 		void printFees(const std::string &filename);
 	 
 };
