@@ -6,7 +6,7 @@
 /*   By: mknoll <mknoll@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/27 12:41:35 by moritzknoll       #+#    #+#             */
-/*   Updated: 2025/11/28 15:38:14 by mknoll           ###   ########.fr       */
+/*   Updated: 2025/12/02 10:26:00 by mknoll           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,6 +39,22 @@ void Span::addNumber(int number)
 		throw std::runtime_error("Span is full");
 	this->_numbers.push_back(number);
 	return ;
+}
+
+// Template method to add multiple numbers using iterator range
+template <typename Iterator>
+void Span::addMultipleNumbers(Iterator begin, Iterator end)
+{
+	// Check if we have enough space for all new numbers
+	unsigned int distance = std::distance(begin, end);
+	if (_numbers.size() + distance > _N)
+		throw std::runtime_error("Not enough space in Span for all numbers");
+	
+	// Add all numbers from the iterator range
+	for (Iterator it = begin; it != end; ++it)
+	{
+		_numbers.push_back(*it);
+	}
 }
 
 unsigned int Span::shortestSpan() const

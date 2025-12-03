@@ -6,7 +6,7 @@
 /*   By: mknoll <mknoll@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/27 13:03:12 by mknoll            #+#    #+#             */
-/*   Updated: 2025/11/28 15:57:38 by mknoll           ###   ########.fr       */
+/*   Updated: 2025/11/28 16:18:54 by mknoll           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ int main()
 	
 	sp.addNumber(6);
 	sp.addNumber(3);
-	sp.addNumber(17);
+	sp.addNumber(-17);
 	sp.addNumber(9);
 	sp.addNumber(11);
 

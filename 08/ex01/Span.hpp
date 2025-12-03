@@ -6,7 +6,7 @@
 /*   By: mknoll <mknoll@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/27 12:41:37 by moritzknoll       #+#    #+#             */
-/*   Updated: 2025/11/28 15:33:34 by mknoll           ###   ########.fr       */
+/*   Updated: 2025/12/02 10:18:48 by mknoll           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,8 @@ class Span
     unsigned int shortestSpan() const; 
     unsigned int longestSpan() const; 
     void printNumbers() const;
+    template <typename Iterator>
+    void addMultipleNumbers(Iterator begin, Iterator end);
 };
 
 #endif

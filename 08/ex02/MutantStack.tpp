@@ -6,7 +6,7 @@
 /*   By: mknoll <mknoll@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/28 11:25:01 by mknoll            #+#    #+#             */
-/*   Updated: 2025/11/28 11:50:38 by mknoll           ###   ########.fr       */
+/*   Updated: 2025/11/29 12:42:35 by mknoll           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,14 +46,16 @@ typename MutantStack<T>::iterator MutantStack<T>::end()
 	return (this->c.end());
 }
 
+// it just takes the container c (deque) and returns begin -> so it just uses the .end() method of deque 
 template <typename T>
 typename MutantStack<T>:: const_iterator MutantStack<T>:: begin() const 
 { 
-	return std::stack<T>::c.begin(); 
+	return (this->c.begin()); 
 }
 
+//
 template <typename T>
 typename MutantStack<T>:: const_iterator MutantStack<T>:: end() const
 { 
-	return std::stack<T>::c.end(); 
+	return (this->c.end()); 
 }
