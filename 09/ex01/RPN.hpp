@@ -1,0 +1,42 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   RPN.hpp                                            :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mknoll <mknoll@student.42.fr>              +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/12/03 12:26:29 by mknoll            #+#    #+#             */
+/*   Updated: 2025/12/04 10:42:18 by mknoll           ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#ifndef RPN_HPP
+#define RPN_HPP
+#include <string>
+#include <vector>
+
+class RPN
+{
+	private: 
+	std::vector<char> _numbers;
+	
+	public: 
+		RPN();
+		RPN(char *str);
+		RPN(const RPN &obj);
+		RPN &operator=(const RPN& obj);
+		~RPN();
+	
+		void calculation();
+		void parseOperations(char *str);
+		int isValid(char c);
+		int isOperator(char c);
+
+		int ADD(int a, int b) const;
+		int SUBTRACT(int a, int b) const; 
+		int MULT(int a, int b) const; 
+		int DIVIDE(int a, int b) const;
+		
+};
+
+#endif
