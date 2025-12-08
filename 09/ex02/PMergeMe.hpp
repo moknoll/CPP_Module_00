@@ -6,7 +6,7 @@
 /*   By: mknoll <mknoll@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/04 10:51:55 by mknoll            #+#    #+#             */
-/*   Updated: 2025/12/08 11:18:24 by mknoll           ###   ########.fr       */
+/*   Updated: 2025/12/08 14:35:55 by mknoll           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,4 +33,5 @@ class PMergeMe
 };
 
 int check_args(int argc, char *argv[]);
+long long get_time_ms();
 #endif

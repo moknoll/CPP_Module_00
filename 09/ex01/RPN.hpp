@@ -6,7 +6,7 @@
 /*   By: mknoll <mknoll@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/03 12:26:29 by mknoll            #+#    #+#             */
-/*   Updated: 2025/12/08 11:03:04 by mknoll           ###   ########.fr       */
+/*   Updated: 2025/12/08 14:49:16 by mknoll           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,6 @@ class RPN
 		int SUBTRACT(int a, int b) const; 
 		int MULT(int a, int b) const; 
 		int DIVIDE(int a, int b) const;
-		
 };
 
 #endif

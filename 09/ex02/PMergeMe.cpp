@@ -6,7 +6,7 @@
 /*   By: mknoll <mknoll@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/04 10:51:52 by mknoll            #+#    #+#             */
-/*   Updated: 2025/12/08 11:21:48 by mknoll           ###   ########.fr       */
+/*   Updated: 2025/12/08 15:09:13 by mknoll           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,10 @@
 #include <iostream> 
 #include <exception>
 #include <cstdlib>
+#include <sys/time.h>
+#include <algorithm>
+#include <unistd.h> //for sleep function
+#include <climits>
 
 PMergeMe::PMergeMe() {}
 
@@ -64,20 +68,47 @@ void PMergeMe::printBeforeSort()
 	std::cout << std::endl;
 }
 
-void PMergeMe::sortAndPrint()
+// Ford-Johnson sort for std::vector
+void fordJohnsonSortVector(std::vector<int> &vec)
 {
-	// Sorting logic to be implemented
+	if (vec.size() <= 1)
+		return;
 
-
-	// Show Performance comparison between vector and list sorting
-	std::cout << "Time to process a range of " << vecContainer.size() << " elements with std::vector : " << vecTime.count() << std::endl;
-	std::cout << "Time to process a range of " << listContainer.size() << " elements with std::list : " << listTime.count() << std::endl;
 }
 
+// Ford-Johnson sort for std::list
+void fordJohnsonSortList(std::list<int> &lst)
+{
+	if (lst.size() <= 1)
+		return;
+}
+void PMergeMe::sortAndPrint()
+{
+	long long vecStart, vecEnd;
+	long long listStart, listEnd;
+	// Sort and time std::vector
+	vecStart = get_time_ms();
+	fordJohnsonSortVector(vecContainer);
+	vecEnd = get_time_ms();
+
+	listStart = get_time_ms();
+	fordJohnsonSortList(listContainer);
+	listEnd = get_time_ms();
+	
+	// Show Performance comparison between vector and list sorting
+	std::cout << "Time to process a range of " 
+			  << vecContainer.size() << " elements with std::vector : " 
+			  << (vecEnd - vecStart) << " ms" << std::endl;
+	std::cout << "Time to process a range of " << listContainer.size() 
+			  << " elements with std::list : " << (listEnd - listStart) << " ms" << std::endl;
+}
+
+
+//helper functions
 int check_args(int argc, char *argv[])
 {
 	// Check for minimum number of arguments
-	if(argc < 2)
+	if(argc <= 2)
 		throw std::runtime_error("Not enough arguments");
 	else if(argc >= 2)
 	{
@@ -89,14 +120,23 @@ int check_args(int argc, char *argv[])
 			{
 				if (!isdigit(arg[j]))
 				{
-					throw std::runtime_error("Only positive numbers");
+					throw std::runtime_error("Argument is not valid");
 				}
-				else if(atoi(argv[i]) < 0)
+				else if(atoi(argv[i]) < 0 || atoi(argv[i]) > INT_MAX)
 				{
-					throw std::runtime_error("Only positive numbers");
+					throw std::runtime_error("Not a valid positive integer");
 				}
 			}	
 		}
 	}
 	return 1;
+}
+
+// Get current time in milliseconds since epoch
+long long get_time_ms()
+{
+	struct timeval time;
+	gettimeofday(&time, NULL);
+	// from microseconds to milliseconds
+	return (time.tv_sec * 1000) + (time.tv_usec / 1000); ;
 }
