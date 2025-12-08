@@ -6,14 +6,13 @@
 /*   By: mknoll <mknoll@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/03 12:26:27 by mknoll            #+#    #+#             */
-/*   Updated: 2025/12/04 10:43:02 by mknoll           ###   ########.fr       */
+/*   Updated: 2025/12/08 11:03:12 by mknoll           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "RPN.hpp"
 #include <iostream>
 #include <exception>
-#include <stack>
 
 RPN::RPN() {} 
 
@@ -55,7 +54,7 @@ void RPN::parseOperations(char *str)
 			i++;
 		if (!isValid(str[i]))
 			throw std::runtime_error("Invalid character in string!");
-		_numbers.push_back(str[i]);
+		_tokens += str[i];
 		i++;
 	}
 }
@@ -85,11 +84,9 @@ int RPN::DIVIDE(int a, int b) const
 void RPN::calculation()
 {
 	
-	std::stack<int>st;
-	
-	for (size_t i = 0; i < _numbers.size(); i++)
+	for (size_t i = 0; i < _tokens.size(); i++)
 	{
-		char current = _numbers[i];
+		char current = _tokens[i];
 		if(!isOperator(current))
 		{
 			// convert character digit to integer
@@ -97,20 +94,20 @@ void RPN::calculation()
 			
 			if (digit < 0 || digit > 9)
 				throw std::runtime_error("Invalid digit");
-			st.push(digit);
+			_numbers.push(digit);
 		}
 		else
 		{
 			// Operator found - need 2 operands
-			if(st.size() < 2)
+			if(_numbers.size() < 2)
 				throw std::runtime_error("Not enough operands");
 			
 			// pop two operands 
-			int b = st.top(); 
-			st.pop();
+			int b = _numbers.top(); 
+			_numbers.pop();
 			
-			int a = st.top(); 
-			st.pop();
+			int a = _numbers.top(); 
+			_numbers.pop();
 			
 			int result; 
 			switch(current)
@@ -129,12 +126,12 @@ void RPN::calculation()
 					break;
 			}	
 			// push result to stack
-			st.push(result);
+			_numbers.push(result);
 		}
 	}
 	
 	// Final result should be single value on stack
-	if(st.size() != 1)
+	if(_numbers.size() != 1)
 		throw std::runtime_error("Invalid RPN expression");
-	std::cout << st.top() << std::endl;
+	std::cout << _numbers.top() << std::endl;
 }

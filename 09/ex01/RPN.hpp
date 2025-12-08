@@ -6,19 +6,20 @@
 /*   By: mknoll <mknoll@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/03 12:26:29 by mknoll            #+#    #+#             */
-/*   Updated: 2025/12/04 10:42:18 by mknoll           ###   ########.fr       */
+/*   Updated: 2025/12/08 11:03:04 by mknoll           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef RPN_HPP
 #define RPN_HPP
 #include <string>
-#include <vector>
+#include <stack>
 
 class RPN
 {
 	private: 
-	std::vector<char> _numbers;
+	std::stack<int> _numbers;
+	std::string _tokens;
 	
 	public: 
 		RPN();
